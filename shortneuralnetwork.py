@@ -15,12 +15,13 @@ np.random.seed(1)
 
 s=2*np.random.random((3,1)) - 1 
 
-for iter in range(100000):
+for iter in range(1000):
     i0=data
     i1=nonlinear(np.dot(i0,s))
     i1error=data1-i1
     delta=i1error*nonlinear(i1,True)
     s += np.dot(i0.T,delta)
+    print (i1)
     
 print (i1)
 
